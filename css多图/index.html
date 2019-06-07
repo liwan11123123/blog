@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css使用多张背景图, 并单独设置是否重复和作用范围</title>
+    <style>
+        .container {
+            height: 300px;
+            background-image:
+                url('./img1.png'),
+                url('./img2.png'),
+                url('./img3.png');
+            /* 左右两边的图不repeat, 中间的图 repeat-x */
+            background-repeat: no-repeat, repeat-x, no-repeat;
+            background-position: left, center, right;
+            padding: 0 20px;
+            /* background-clip: border-box	背景被裁剪到边框盒。
+                                    padding-box	背景被裁剪到内边距框。
+                                    content-box	背景被裁剪到内容框。 
+                相关链接：http://www.w3school.com.cn/tiy/c.asp?f=css_background-clip */
+            background-clip: padding-box, content-box, padding-box;
+            /* background-origin 属性规定 background-position 属性相对于什么位置来定位。
+                 padding-box	背景图像相对于内边距框来定位。
+                border-box	背景图像相对于边框盒来定位。
+                content-box	背景图像相对于内容框来定位。
+                相关链接：http://www.w3school.com.cn/tiy/c.asp?f=css_background-origin */
+            background-origin: padding-box, content-box, padding-box;
+            /* background-size 属性规定背景图像的尺寸。
+                这里img1、img2、img3 width 都为 20px 高度 设置为100% 
+                相关链接：http://www.w3school.com.cn/tiy/c.asp?f=css_background-size */
+            background-size: 20px 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>转载自<a href="https://blog.suisuijiang.com/css-multiple-background-image/">碎碎酱的博客</a></h1>
+    <div class="container"></div>
+</body>
+
+</html>
